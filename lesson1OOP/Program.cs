@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 
-Transport[] transports = new Transport[] { new Car(),new Airplane(),new Boat()};
+Transport[] transports = new Transport[] {new Car(),new Airplane(),new Boat()};
 
 foreach(Transport transport in transports) 
 {

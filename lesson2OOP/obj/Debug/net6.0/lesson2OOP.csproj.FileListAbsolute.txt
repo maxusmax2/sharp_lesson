@@ -1,0 +1,15 @@
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\bin\Debug\net6.0\lesson2OOP.exe
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\bin\Debug\net6.0\lesson2OOP.deps.json
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\bin\Debug\net6.0\lesson2OOP.runtimeconfig.json
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\bin\Debug\net6.0\lesson2OOP.dll
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\bin\Debug\net6.0\lesson2OOP.pdb
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.csproj.AssemblyReference.cache
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.AssemblyInfoInputs.cache
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.AssemblyInfo.cs
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.csproj.CoreCompileInputs.cache
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.dll
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\refint\lesson2OOP.dll
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.pdb
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\lesson2OOP.genruntimeconfig.cache
+C:\WorkFolder\repository\sharp_lesson\lesson2OOP\obj\Debug\net6.0\ref\lesson2OOP.dll
