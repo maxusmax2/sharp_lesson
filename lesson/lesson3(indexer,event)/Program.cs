@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-A a = new A(new int[] { 1, 42, 73, 37, 31 });
+﻿A a = new A(new int[] { 1, 42, 73, 37, 31 });
 a.IndexingNotice += (A sender, AEventArgs e) => Console.WriteLine(e.Message + $"Длина массива : {sender.Length}");
 
 Console.WriteLine(a[0]);
