@@ -15,49 +15,14 @@ IEnumerable<int> iterate(int startingValue)
     {
         throw new ArgumentException("Starting from 2 or 5 is not allowed");
     }
-    return new MyIEnumerable(startingValue);
+    return internalIterate(startingValue);
     
 }
-public class MyIEnumerable : IEnumerable<int>
+IEnumerable<int> internalIterate(int startingValue)
 {
-    private int _startingValue;
-    public MyIEnumerable(int startingValue) 
+    while (true) 
     {
-        _startingValue = startingValue;
-    }
-    public IEnumerator<int> GetEnumerator()
-    {
-        return new MyIEnumerator(_startingValue);
+        yield return startingValue;
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        throw new NotImplementedException();
-    }
 }
-public class MyIEnumerator : IEnumerator<int>
-{
-    private int _value;
-    public MyIEnumerator(int startingValue) 
-    {
-        _value = startingValue;
-    }
-    public int Current => _value;
-
-    object IEnumerator.Current => throw new NotImplementedException();
-
-    void IDisposable.Dispose() => throw new NotImplementedException();
-
-    public bool MoveNext()
-    {
-        _value++;
-        return true;
-    }
-
-    public void Reset()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-
