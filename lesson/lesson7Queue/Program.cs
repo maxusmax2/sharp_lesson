@@ -18,7 +18,7 @@ public class MyQueue<T> :IQueue<T>
     
     public T Dequeue()
     {
-        if(_count <= 0 || iterationFlag) throw new InvalidOperationException();
+        if(_count <= 0 || _first == null || iterationFlag) throw new InvalidOperationException();
         T item = _first.Item;
         _first = _first.Next;
         _count--;
