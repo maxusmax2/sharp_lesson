@@ -11,24 +11,23 @@ public class MyQueue<T> :IQueue<T>
 {
     public int Count { get { return _count; }  }
 
-    private bool iterationFlag = false;
+    private int _version;
     private int _count = 0;
     private QueueFrame _first;
     private QueueFrame _last;
     
     public T Dequeue()
     {
-        if(_count <= 0 || _first == null || iterationFlag) throw new InvalidOperationException();
+        if(_count <= 0 || _first == null ) throw new InvalidOperationException();
         T item = _first.Item;
         _first = _first.Next;
         _count--;
+        _version++;
         return item;
     }
 
     public void Enqueue(T item)
     {
-        if (iterationFlag) throw new InvalidOperationException();
-        ArgumentNullException.ThrowIfNull(item);
         var frame = new QueueFrame(item, _last);
         
         if (_count == 0 && _last == null)
@@ -41,17 +40,18 @@ public class MyQueue<T> :IQueue<T>
             _last = frame;
         }
         _count++;
+        _version++;
     }
 
     public IEnumerator<T> GetEnumerator()
     {
-        iterationFlag = true;
-        return new QueueIterator(_count,_first,()=>iterationFlag = true,()=>iterationFlag = false);
+        
+        return new QueueIterator(_count,_first,()=>_version);
     }
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-        throw new NotImplementedException();
+        return GetEnumerator();
     }
 
     class QueueFrame
@@ -69,16 +69,17 @@ public class MyQueue<T> :IQueue<T>
         private readonly int initCount;
         private readonly QueueFrame initFrame;
         private int _count;
+        private int _version;
         private QueueFrame _frame;
-        private Action _startIterate;
-        private Action _stopIterate;
+        private Func<int> getVersion;
 
-        public QueueIterator(int count, QueueFrame frame, Action startIterate,Action stopIterate)
+        public QueueIterator(int count, QueueFrame frame, Func<int> getVersion)
         {
+            
             _count = initCount = count;
             initFrame = _frame = new QueueFrame(default(T), frame);
-            _startIterate = startIterate;
-            _stopIterate = stopIterate;
+            this.getVersion = getVersion;
+            _version = this.getVersion();
         }
 
         public T Current =>_frame.Item;
@@ -89,14 +90,13 @@ public class MyQueue<T> :IQueue<T>
 
         public bool MoveNext()
         {
-            _startIterate();
+            if (_version != getVersion()) throw new InvalidOperationException();
             if(_count > 0 && _frame!=null) 
             {
                 _count--;
                 _frame = _frame.Next;
                 return true;
             }
-            _stopIterate();
             return false;
         }
 
