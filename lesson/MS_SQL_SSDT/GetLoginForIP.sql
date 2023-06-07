@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION [dbo].[GetLoginForIP]
+(
+	@IpADDRESS nvarchar(15)
+)
+RETURNS TABLE AS RETURN
+(
+	SELECT * FROM LOGINS
+	WHERE IpAddress LIKE '@IpADDRESS.%'
+)
