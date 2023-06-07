@@ -9,7 +9,7 @@ void SavePathToDB(string cargoId, NauticalMiles milesPath, Kilometer KmPath)
 var id = "test";
 var kilometer1 = new Kilometer(100);
 NauticalMiles nauticalMiles = new NauticalMiles(40);
-var kilometer2 = new Kilometer(80);
+var kilometer2 = new Kilometer(-1);
 SavePathToDB(id, (NauticalMiles)kilometer1, (Kilometer)nauticalMiles + kilometer2);
 
 public class Kilometer
