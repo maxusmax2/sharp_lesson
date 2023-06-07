@@ -7,7 +7,7 @@
 RETURNS TABLE
 RETURN
 (
-	SELECT * FROM 
+	SELECT Id,Date,IpAddress,DeviceSettings,UserId FROM 
 	LOGINS WHERE UserId = @UserId 
 	ORDER BY Date 
 	OFFSET @PageNum ROWS
